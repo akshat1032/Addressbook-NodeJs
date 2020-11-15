@@ -4,7 +4,15 @@ const cityStateNamePattern = RegExp('^[a-zA-Z]{4,}$');
 const zipPattern = RegExp('^[1-9]{1}[0-9]{5}$');
 const phonePattern = RegExp('^[1-9]{1}[0-9]{9}$');
 const emailIdPattern = RegExp('^[a-zA-Z0-9+_-]+([.][a-zA-Z0-9]+)*@([a-zA-Z0-9]+)([.][a-z]+)?[.][a-z]{2,}$');
-export class Contact {
+class Contact {
+    firstName;
+    lastName;
+    address;
+    city;
+    state;
+    zip;
+    phoneNumber;
+    emailId;
 
     //constructor
     constructor(...contactDetails) {
@@ -42,9 +50,11 @@ export class Contact {
         }
     }
 
-     //converting JSON to String
-     toString(){
-        return "First Name: "+this.firstName+" Last Name: "+this.lastName+" Address: "+this.address+" City: "+this.city+
-        " State: "+this.state+" Zip: "+this.zip+" Phone Number: "+this.phoneNumber+" Email: "+this.email;
+    //converting JSON to String
+    toString = () => {
+        return "First Name: " + this.firstName + " Last Name: " + this.lastName + " Address: " + this.address + " City: " + this.city +
+            " State: " + this.state + " Zip: " + this.zip + " Phone Number: " + this.phoneNumber + " Email: " + this.email;
     }
 }
+
+module.exports = { Contact };
