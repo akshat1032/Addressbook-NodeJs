@@ -6,4 +6,6 @@
 
 ###### UC_2 Validate contact detail fields using RegEx
 
-###### UC_3 Create addressbook array and add contact to it 
+###### UC_3 Create addressbook array and add contact to it
+
+###### UC_4 Editing existing contact in address book
