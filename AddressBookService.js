@@ -55,13 +55,18 @@ exports.viewContactByState = (addressBook) => {
     }), {});
     console.log(JSON.stringify(personByState));
 }
-exports.countByCity=(addressBook)=>{
-    let cityName=prompt("Enter city name: ");
-    let countContactByCity=addressBook.filter(contact=>contact.city==cityName).reduce(contacts=>contacts+1,0);
-    console.log("Numbe of contacts in city: "+cityName+" are: "+countContactByCity);
+exports.countByCity = (addressBook) => {
+    let cityName = prompt("Enter city name: ");
+    let countContactByCity = addressBook.filter(contact => contact.city == cityName).reduce(contacts => contacts + 1, 0);
+    console.log("Numbe of contacts in city: " + cityName + " are: " + countContactByCity);
 }
-exports.countByState=(addressBook)=>{
-    let stateName=prompt("Enter state name: ");
-    let countContactByState=addressBook.filter(contact=>contact.city==stateName).reduce(contacts=>contacts+1,0);
-    console.log("Number of contacts in state: "+stateName+" are: "+countContactByState);
+exports.countByState = (addressBook) => {
+    let stateName = prompt("Enter state name: ");
+    let countContactByState = addressBook.filter(contact => contact.city == stateName).reduce(contacts => contacts + 1, 0);
+    console.log("Number of contacts in state: " + stateName + " are: " + countContactByState);
+}
+exports.sortContactByName = (addressBook) => {
+    return addressBook.sort((person1, person2) => {
+        return ((person1.firstName < person2.firstName) ? -1 : 1)
+    });
 }
