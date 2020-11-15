@@ -38,5 +38,9 @@ do {
                 ServiceRef.deleteContact(name, addressBook);
             }
             break;
+        case 4:
+            let numberOfContacts = addressBook.reduce(ServiceRef.countContacts, 0);
+            console.log("Count of contacts :" + numberOfContacts);
+            break;
     }
 } while (choice != 0);

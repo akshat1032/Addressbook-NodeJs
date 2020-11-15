@@ -11,3 +11,5 @@
 ###### UC_4 Editing existing contact in address book
 
 ###### UC_5 Delete contact by name from address book
+
+###### UC_6 Find number of contacts in the address book
