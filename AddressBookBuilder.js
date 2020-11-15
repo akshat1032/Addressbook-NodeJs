@@ -6,7 +6,8 @@ let choice = 0;
 do {
     choice = Number(prompt("Enter :\n1-Add contact \n2-Edit Contact \n3-Delete contact \n4-Count contact \n5-Search person by city or state"
         + "\n6-View person by city or state\n7-Count person by city or state"
-        + "\n8-Sort person by name\n0-Exit : \n "));
+        + "\n8-Sort person by name\n9-Sort person by city\n10-Sort person by state"
+        + "\n11-Sort person by zip\n0-Exit : \n "));
     switch (choice) {
         case 1:
             let firstName = prompt("Enter the first name :");
@@ -79,6 +80,30 @@ do {
             else {
                 let sortedByName = ServiceRef.sortContactByName(addressBook);
                 console.log(sortedByName);
+            }
+            break;
+        case 9:
+            if (addressBook.length == 0)
+                console.log("Address book is empty");
+            else {
+                let sortedByCity = ServiceRef.sortContactByCity(addressBook);
+                console.log(sortedByCity);
+            }
+            break;
+        case 10:
+            if (addressBook.length == 0)
+                console.log("Address book is empty");
+            else {
+                let sortedByState = ServiceRef.sortContactByState(addressBook);
+                console.log(sortedByState);
+            }
+            break;
+        case 11:
+            if (addressBook.length == 0)
+                console.log("Address book is empty");
+            else {
+                let sortedByZip = ServiceRef.sortContactByZip(addressBook);
+                console.log(sortedByZip);
             }
             break;
     }

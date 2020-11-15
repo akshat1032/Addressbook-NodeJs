@@ -24,3 +24,5 @@
 
 ###### UC_11 Sort address book by person name
 
+###### UC_12 Sort address book by city, state or zip
+
