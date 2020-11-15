@@ -13,3 +13,7 @@
 ###### UC_5 Delete contact by name from address book
 
 ###### UC_6 Find number of contacts in the address book
+
+###### UC_7 Ensure there is no duplicate entry for person name in address book
+
+

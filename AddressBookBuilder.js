@@ -9,6 +9,10 @@ do {
         case 1:
             let firstName = prompt("Enter the first name :");
             let lastName = prompt("Enter the last name :");
+            if (addressBook.find((contact) => (contact.firstName + contact.lastName) == (firstName + lastName))) {
+                console.log("Person is present in address book");
+                return;
+            }
             let address = prompt("Enter the address :");
             let city = prompt("Enter the city:");
             let state = prompt("Enter the state :");
