@@ -16,4 +16,7 @@
 
 ###### UC_7 Ensure there is no duplicate entry for person name in address book
 
+###### UC_8 Search person by city or state in address book
+
+
 
