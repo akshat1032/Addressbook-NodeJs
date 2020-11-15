@@ -20,3 +20,5 @@
 
 ###### UC_9 View person by city or state
 
+###### UC_10 Count person by city or state
+

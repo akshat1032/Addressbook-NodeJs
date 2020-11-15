@@ -5,7 +5,7 @@ let addressBook = new Array();
 let choice = 0;
 do {
     choice = Number(prompt("Enter :\n1-Add contact \n2-Edit Contact \n3-Delete contact \n4-Count contact \n5-Search person by city or state"
-        + "\n6-View person by city or state\n0-Exit : \n "));
+        + "\n6-View person by city or state\n7-Count person by city or state\n0-Exit : \n "));
     switch (choice) {
         case 1:
             let firstName = prompt("Enter the first name :");
@@ -62,6 +62,14 @@ do {
             else {
                 ServiceRef.viewContactByCity(addressBook);
                 ServiceRef.viewContactByState(addressBook);
+            }
+            break;
+        case 7:
+            if (addressBook.length == 0)
+                console.log("Address book is empty");
+            else {
+                ServiceRef.countByCity(addressBook);
+                ServiceRef.countByState(addressBook);
             }
             break;
     }
