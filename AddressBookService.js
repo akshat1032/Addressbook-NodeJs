@@ -18,3 +18,12 @@ exports.editContact = (name, addressBook) => {
         addressBook.find((contact) => contact.firstName == name).firstName = newName;
     }
 }
+exports.deleteContact = (name, addressBook) => {
+    let found = addressBook.find((contact) => contact.firstName == name);
+    if (found == undefined)
+        console.log("No such contact");
+    else {
+        addressBook.pop(addressBook.find((contact) => contact.firstName == name));
+        console.log("Deleted successfully!")
+    }
+}

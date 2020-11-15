@@ -4,7 +4,7 @@ const prompt = require('prompt-sync')();
 let addressBook = new Array();
 let choice = 0;
 do {
-    choice = prompt("Enter 1-Add contact \n2-Edit Contact \n0-Exit: ");
+    choice = prompt("Enter 1-Add contact \n2-Edit Contact \n3-Delete contact \n0-Exit: ");
     switch (choice) {
         case 1:
             let firstName = prompt("Enter the first name :");
@@ -29,5 +29,14 @@ do {
                 let name = prompt("Enter the name whose details should be edited : ");
                 ServiceRef.editContact(name, addressBook);
             }
+            break;
+        case 3:
+            if (addressBook.length == 0) {
+                console.log("Address book is empty");
+            } else {
+                let name = prompt("Enter the name whose contact you want to delete: ");
+                ServiceRef.deleteContact(name, addressBook);
+            }
+            break;
     }
 } while (choice != 0);
