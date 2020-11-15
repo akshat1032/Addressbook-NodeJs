@@ -18,5 +18,5 @@
 
 ###### UC_8 Search person by city or state in address book
 
-
+###### UC_9 View person by city or state
 

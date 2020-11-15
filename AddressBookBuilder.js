@@ -4,7 +4,8 @@ const prompt = require('prompt-sync')();
 let addressBook = new Array();
 let choice = 0;
 do {
-    choice = prompt("Enter 1-Add contact \n2-Edit Contact \n3-Delete contact \n4-Count contact \n5-Search person by city or state\n0-Exit: ");
+    choice = Number(prompt("Enter :\n1-Add contact \n2-Edit Contact \n3-Delete contact \n4-Count contact \n5-Search person by city or state"
+        + "\n6-View person by city or state\n0-Exit : \n "));
     switch (choice) {
         case 1:
             let firstName = prompt("Enter the first name :");
@@ -53,6 +54,14 @@ do {
                 let name = prompt("Enter the name whose contact you want to search");
                 ServiceRef.searchContactInCity(name, addressBook);
                 ServiceRef.searchContactInState(name, addressBook);
+            }
+            break;
+        case 6:
+            if (addressBook.length == 0)
+                console.log("Address book is empty");
+            else {
+                ServiceRef.viewContactByCity(addressBook);
+                ServiceRef.viewContactByState(addressBook);
             }
             break;
     }

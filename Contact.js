@@ -49,12 +49,6 @@ class Contact {
             this.emailId = contactDetails[7];
         }
     }
-    
-    //converting JSON to String
-    toString = () => {
-        return "First Name: " + this.firstName + " Last Name: " + this.lastName + " Address: " + this.address + " City: " + this.city +
-            " State: " + this.state + " Zip: " + this.zip + " Phone Number: " + this.phoneNumber + " Email: " + this.email;
-    }
 }
 
 module.exports = { Contact };

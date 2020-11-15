@@ -32,10 +32,26 @@ exports.countContacts = (count) => count++;
 exports.searchContactInCity = (name, addressBook) => {
     let cityName = prompt("Enter city name: ");
     let contactByCity = addressBook.filter(contact => contact.city == cityName).find(contact => contact.firstName == name);
-    console.log("Contact found in given city:",contactByCity);
+    console.log("Contact found in given city:", contactByCity);
 }
 exports.searchContactInState = (name, addressBook) => {
     let stateName = prompt("Enter state name: ");
     let contactByState = addressBook.filter(contact => contact.state == stateName).find(contact => contact.firstName == name);
     console.log("Contact found in given state: ", contactByState);
+}
+exports.viewContactByCity = (addressBook) => {
+    personByCity = addressBook.reduce((h, contact) => Object.assign(h, {
+        [contact.city]: (h[contact.city] || []).concat({
+            firstName: contact.firstName, lastName: contact.lastName
+        })
+    }), {});
+    console.log(JSON.stringify(personByCity));
+}
+exports.viewContactByState = (addressBook) => {
+    personByState = addressBook.reduce((h, contact) => Object.assign(h, {
+        [contact.state]: (h[contact.state] || []).concat({
+            firstName: contact.firstName, lastName: contact.lastName
+        })
+    }), {});
+    console.log(JSON.stringify(personByState));
 }
